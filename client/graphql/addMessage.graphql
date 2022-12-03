@@ -1,0 +1,12 @@
+mutation addMessage($chat: String!, $content: String!) {
+  createMessage(input: { content: $content, chat: $chat }) {
+    _id
+    user {
+      _id
+      username
+      isOnline
+    }
+    content
+    createdAt
+  }
+}

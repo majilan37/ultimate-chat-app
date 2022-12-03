@@ -1,0 +1,12 @@
+query messages($chat: String!) {
+  getMessages(input: { chat: $chat }) {
+    _id
+    user {
+      _id
+      username
+      isOnline
+    }
+    content
+    createdAt
+  }
+}

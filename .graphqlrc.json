@@ -1,0 +1,4 @@
+{
+  "schema": "http://localhost:5000/api/__graphql",
+  "graphql-config.load.legacy": true
+}

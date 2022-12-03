@@ -1,0 +1,12 @@
+subscription message {
+  newMessage {
+    _id
+    user {
+      _id
+      username
+      isOnline
+    }
+    content
+    createdAt
+  }
+}

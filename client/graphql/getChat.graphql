@@ -1,0 +1,15 @@
+query getChat($id: String!) {
+  getChat(input: { _id: $id }) {
+    _id
+    users
+    messages {
+      _id
+      content
+      user {
+        _id
+        email
+        username
+      }
+    }
+  }
+}

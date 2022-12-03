@@ -1,0 +1,6 @@
+mutation addChat($users: [String!]!) {
+  createChat(input: { users: $users }) {
+    _id
+    users
+  }
+}

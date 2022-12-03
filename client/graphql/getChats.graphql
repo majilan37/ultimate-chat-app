@@ -1,0 +1,6 @@
+query getChats {
+  getChats {
+    _id
+    users
+  }
+}

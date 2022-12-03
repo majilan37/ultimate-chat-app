@@ -1,0 +1,6 @@
+subscription chat {
+  newChat {
+    _id
+    users
+  }
+}
