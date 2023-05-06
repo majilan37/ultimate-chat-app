@@ -41,7 +41,7 @@ function Messages({
   }, []);
 
   return (
-    <div className="relative space-y-3 ">
+    <div className="relative flex-1 space-y-3 ">
       {(!loading ? messages?.getMessages : Array.from(new Array(1)))?.map(
         (message: MessagesQuery["getMessages"][0]) =>
           message ? (

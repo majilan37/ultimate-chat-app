@@ -21,12 +21,12 @@ function Sidebar() {
   const [search, setSearch] = useState("");
 
   const [chats, setChats] = useState<Pick<Chat, "_id" | "users">[]>([]);
-  const { data: wsChats, loading: wsLoading } = useChatSubscription({});
+  const { data: wsChats } = useChatSubscription({});
   const { data, loading, subscribeToMore } = useGetChatsQuery();
 
   useEffect(() => {
     setChats([...(data?.getChats ?? [])]);
-  }, [loading, wsLoading, wsChats]);
+  }, [loading, wsChats]);
 
   // * Combine query and subscription
   useEffect(() => {
@@ -44,7 +44,6 @@ function Sidebar() {
           (chat) => chat?._id !== wsChats?.newChat._id
         );
 
-        console.log("newChat >>", newChat);
         return Object.assign({}, prev, {
           getChats: checker ? [newChat, ...prev.getChats] : [...prev.getChats],
         });

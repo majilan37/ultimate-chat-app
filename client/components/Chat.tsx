@@ -25,8 +25,8 @@ function Chat({ chat, loading }: { chat?: GetChatQuery; loading?: boolean }) {
 
   return (
     <div className=" relative flex-1 overflow-hidden bg-gray-100">
-      <div className="  bg-white ">
-        <div className="  ">
+      <div className="  bg-white flex-1 h-full flex flex-col"> 
+        <div className="flex flex-col flex-1">
           {status === "loading" || loading ? (
             <Skeleton />
           ) : (
@@ -43,7 +43,7 @@ function Chat({ chat, loading }: { chat?: GetChatQuery; loading?: boolean }) {
             </div>
           )}
           {/* Display messages */}
-          <div className="box-border h-full overflow-y-auto bg-green-50 p-4 ">
+          <div className="box-border h-full flex-1 overflow-y-auto bg-green-50 p-4 ">
             <Messages chat={chat?.getChat._id!} session={session} />
           </div>
           {/* Input to write a message */}

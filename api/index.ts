@@ -28,7 +28,7 @@ dotenv.config();
 
   //   * Building schema
   const schema = await buildSchema({
-    resolvers: [__dirname + "/resolvers/*.ts"],
+    resolvers: [__dirname + "/resolvers/*.{ts,js}"],
     authChecker: ({ context: { req } }: { context: Context }): boolean => {
       return !!req?.cookies?.accessToken;
     },
