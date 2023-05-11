@@ -52,7 +52,7 @@ export class UserService {
       path: "/",
       sameSite: "strict",
       httpOnly: true,
-      domain: "http://localhost:3000",
+      domain: "*",
       secure: process.env.NODE_ENV === "production",
     });
 
